@@ -4,10 +4,10 @@
   "description": "reportRadioBases",
   "main": "index.js",
   "scripts": {
-    "installExpress": "npm install --prefix express-app",
-    "installVue": "npm install --prefix vue-app",
-    "server": "npm run start --prefix express",
-    "client": "npm run serve --prefix vue",
+    "installExpress": "npm install --prefix expressapp",
+    "installVue": "npm install --prefix vueapp",
+    "server": "npm run start --prefix expressapp",
+    "client": "npm run serve --prefix vueapp",
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "concurrently  \"npm run server\" \"npm run client\"",
     "build": "concurrently  \"npm run installExpress\" \"npm run installVue\""
