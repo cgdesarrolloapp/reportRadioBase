@@ -4,22 +4,13 @@
   "description": "https://dongmin-jang.medium.com/nodejs-express-vue-heroku-d3ed48edee0c",
   "main": "index.js",
   "scripts": {
-    "server": "npm run start --prefix express-app",
-    "client": "npm run serve --prefix vue-app",
+    "installExpress": "npm run install --prefix express",
+    "installVue": "npm run install --prefix vue",
+    "server": "npm run start --prefix express",
+    "client": "npm run serve --prefix vue",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "concurrently  \"npm run server\" \"npm run client\""
-  },
-  "dependencies": {
-    "connect-history-api-fallback": "^1.6.0",
-    "cookie-parser": "~1.4.4",
-    "debug": "~2.6.9",
-    "express": "~4.16.1",
-    "http-errors": "~1.6.3",
-    "morgan": "~1.9.1",
-    "pug": "2.0.0-beta11",
-    "@vue/cli-service": "~4.5.0",
-    "core-js": "^3.6.5",
-    "vue": "^3.0.0"
+    "start": "concurrently  \"npm run server\" \"npm run client\"",
+    "build": "concurrently  \"npm run installExpress\" \"npm run installVue\""
   },
   "keywords": [],
   "author": "",
