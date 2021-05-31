@@ -4,8 +4,8 @@
   "description": "https://dongmin-jang.medium.com/nodejs-express-vue-heroku-d3ed48edee0c",
   "main": "index.js",
   "scripts": {
-    "installExpress": "npm run install --prefix express",
-    "installVue": "npm run install --prefix vue",
+    "installExpress": "npm install --prefix express",
+    "installVue": "npm install --prefix vue",
     "server": "npm run start --prefix express",
     "client": "npm run serve --prefix vue",
     "test": "echo \"Error: no test specified\" && exit 1",
