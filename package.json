@@ -1,11 +1,11 @@
 {
   "name": "reportRadioBases",
   "version": "1.0.0",
-  "description": "https://dongmin-jang.medium.com/nodejs-express-vue-heroku-d3ed48edee0c",
+  "description": "reportRadioBases",
   "main": "index.js",
   "scripts": {
-    "installExpress": "npm install --prefix express",
-    "installVue": "npm install --prefix vue",
+    "installExpress": "npm install --prefix express-app",
+    "installVue": "npm install --prefix vue-app",
     "server": "npm run start --prefix express",
     "client": "npm run serve --prefix vue",
     "test": "echo \"Error: no test specified\" && exit 1",
