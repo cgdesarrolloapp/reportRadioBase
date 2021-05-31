@@ -1,0 +1,19 @@
+{
+  "name": "reportRadioBases",
+  "version": "1.0.0",
+  "description": "https://dongmin-jang.medium.com/nodejs-express-vue-heroku-d3ed48edee0c",
+  "main": "index.js",
+  "scripts": {
+    "server": "npm run start --prefix express-app",
+    "client": "npm run serve --prefix vue-app",
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "concurrently  \"npm run server\" \"npm run client\""
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "concurrently": "^6.2.0",
+    "express": "^4.17.1"
+  }
+}
