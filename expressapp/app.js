@@ -22,10 +22,8 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
-//app.use('/', indexRouter);
-app.get('/', function(req, res) {  
-  res.redirect('http://localhost:8080');
-})
+app.use('/', indexRouter);
+
 app.use('/users', usersRouter);
 
 app.get("/api", (req, res) => {
