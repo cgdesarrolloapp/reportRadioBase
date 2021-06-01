@@ -1,5 +1,6 @@
 <template>
 <div id="app">
+    <h1 class="bg-primary">Reporte</h1>
     <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm">
         <br />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
@@ -10,6 +11,7 @@
         <label v-bind:style="{ padding: '10px', margin: '10px' }">Seleccione Fecha</label>
         <br />
         <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
+        <br />
         <input type="submit" @click="consultarRadioBase" />
         <br />
 

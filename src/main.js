@@ -8,8 +8,8 @@ import App from './App.vue'
 // Optionally install the BootstrapVue icon components plugin
 //createApp.use(IconsPlugin)
 
-// Import Bootstrap an BootstrapVue CSS files (order is important)
-//import 'bootstrap/dist/css/bootstrap.css'
+//Import Bootstrap an BootstrapVue CSS files (order is important)
+import 'bootstrap/dist/css/bootstrap.min.css'
 //import 'bootstrap-vue/dist/bootstrap-vue.css'
 
 createApp(App).mount('#app')
