@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-    <h1 class="bg-primary">Reporte</h1>
+    <h1 class="bg-primary text-white text-center p-2">Reporte</h1>
     <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm">
         <br />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
