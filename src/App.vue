@@ -5,14 +5,9 @@
         <br />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
             Ingrese Radiobase</label>
-        <br />
         <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
-        <br />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">Seleccione Fecha</label>
-        <br />
         <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
-        <br />
-        <!-- <input type="submit" @click="consultarRadioBase" /> -->
         <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
         <br />
 
