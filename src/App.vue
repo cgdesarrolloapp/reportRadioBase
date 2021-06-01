@@ -5,8 +5,9 @@
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
             Ingrese Radiobase</label>
         <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
-        <label v-bind:style="{ padding: '10px', margin: '10px' }">Seleccione Fecha</label>
-        <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
+        <label v-bind:style="{ padding: '10px', margin: '10px' }">Region</label>
+        <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRegion" name="REGION" placeholder="Region" value="6" />
+        <!-- <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" /> -->
         <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
     </form>
 
@@ -207,13 +208,8 @@ export default {
             }*/
             this.aDateRange = this.aDateRange.sort().reverse();
             console.log("this.aDateRange", this.aDateRange);
-            /* const response = await axios.get(
-               "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
-                 this.radiobases +
-                 "&FECHA=" +
-                 this.date
-             );*/
-             axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
+    
+            axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
             const response = await axios.get(
                 "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
                 this.radiobases +
