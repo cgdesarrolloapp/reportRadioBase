@@ -31,16 +31,7 @@
       <input type="submit" @click="consultarRadioBase" />
     </form>
 
-    <!--table border="1">
-      <thead>
-        <th>RADIOBASE</th>
-        <th>FECHA</th>
-      </thead>
-      <tr v-for="data in this.items" v-bind:key="data.RADIOBASE">
-        <td>{{ data.RADIOBASE }}</td>
-        <td>{{ data.FECHA }}</td>
-      </tr>
-    </table-->
+     <b-table striped hover :items="items"></b-table>
 
     <table id="tblRadio" class="table mt-5">
       <thead>
@@ -79,7 +70,6 @@
           >
             {{ radiobases }}
           </th>
-          <!--span  v-bind:style="parseInt(i) <= 15 ? coloBG = 'red' : parseInt(i) > 15 && parseInt(i) <= 40 ? coloBG = '#ff8000' : parseInt(i) > 40 && parseInt(i) <= 90 ? colorBg = 'yellow' : parseInt(i) < 90 ? colorBG = 'green' : colorBG = 'grey'"-->
           <td
             v-bind:id="dynamicId++"
             v-bind:style="[
