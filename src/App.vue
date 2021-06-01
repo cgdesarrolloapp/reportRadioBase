@@ -1,6 +1,6 @@
 <template>
 <div id="app">
-    <h1 class="bg-primary text-white text-center p-1">Reporte</h1>
+    <h1 class=" text-white text-center p-1">Reporte</h1>
     <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm">
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
             Ingrese Radiobase</label>
@@ -72,7 +72,7 @@
     margin-top: 60px;
 }
 #app h1 {
-    background: #00529b
+    background-color: #00529b
 },
 #tblRadio {
     border: 2px solid black;
