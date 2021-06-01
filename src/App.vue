@@ -7,7 +7,8 @@
         <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">Region</label>
         <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRegion" name="REGION" placeholder="Region" value="6" />
-        <input id="dpFecha" class="btn btn-success"  v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" /> 
+        <!-- <input id="dpFecha" class="btn btn-success"  v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />  -->
+        <input type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</input>
         <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
     </form>
 
