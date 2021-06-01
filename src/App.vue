@@ -188,11 +188,14 @@ export default {
         },
         async consultarRadioBase() {
             // document.getElementById(".tblBody > td") ? document.getElementById(".tblBody > td").remove : document.getElementById(".tblBody > td")
-            let sDateP = document.getElementById("dpFecha").value;
+            //let sDateP = document.getElementById("dpFecha").value;
+            
+            let sRegionInp = document.getElementById("inpRegion").value;
             let sRadioBaseInp = document.getElementById("inpRadioBase").value;
             this.radiobasesMaestro = [];
             this.radiobases = sRadioBaseInp;
-            this.date = sDateP;
+            //this.date = sDateP;
+            this.date = moment().format('YYYY-MM-DD');
             this.aDateRange = [];
             this.items = [];
             console.log("this.date", this.date);
