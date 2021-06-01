@@ -1,7 +1,7 @@
 <template>
 <div id="app">
     <h1 class=" text-white text-center p-1">Reporte</h1>
-    <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm">
+    <!-- <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm"> -->
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
             Ingrese Radiobase</label>
         <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
@@ -10,7 +10,7 @@
         <!-- <input id="dpFecha" class="btn btn-success"  v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />  -->
         <!-- <input type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</input> -->
         <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
-    </form>
+    <!-- </form> -->
 
     <b-table striped hover :items="items"></b-table>
 
@@ -30,33 +30,35 @@
               width: '90px',
               height: '140px',
               border: '1px solid black',
+              verticalAlign:'middle'
             }" v-for="i in aDateRange" :key="i">
                     {{ i }}
                 </td>
             </tr>
         </thead>
         <tbody :class="tblBody">
-            <tr>
-                <th v-bind:style="{ height: '150px', border: '1px solid black' }" scope="row">
-                    {{ radiobases }}
+            <tr v-for="i in Object.values(items)" :key="i" >
+                <th v-bind:style="{ height: '50px', border: '1px solid black' }" scope="row">
+                    {{ i.RADIOBASE }}
                 </th>
-                <td v-bind:id="dynamicId++" v-bind:style="[
-              parseInt(i) <= 15
+                <td  v-bind:style="[
+              parseInt( J.TRAFICO) <= 15
                 ? (ColorBG = 'red')
-                : parseInt(i) > 15 && parseInt(i) <= 40
+                : parseInt( J.TRAFICO) > 15 && parseInt( J.TRAFICO) <= 40
                 ? (ColorBG = 'orange')
-                : parseInt(i) > 40 && parseInt(i) <= 90
+                : parseInt( J.TRAFICO) > 40 && parseInt( J.TRAFICO) <= 90
                 ? (ColorBG = 'yellow')
-                : parseInt(i) > 90
+                : parseInt( J.TRAFICO) > 90
                 ? (ColorBG = 'green')
                 : (ColorBG = 'gray'),
               {
-                height: '150px',
+                height: '50px',
                 border: '1px solid black',
                 backgroundColor: ColorBG,
+                verticalAlign:'middle'
               },
-            ]" v-for="i in Object.values(items)" :key="i">
-                    {{ i.TRAFICO }}
+            ]" v-for="J in Object.values(items)" :key="J">
+                    {{ J.TRAFICO }}
                 </td>
             </tr>
         </tbody>
