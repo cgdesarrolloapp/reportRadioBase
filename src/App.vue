@@ -213,6 +213,7 @@ export default {
                  "&FECHA=" +
                  this.date
              );*/
+             axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
             const response = await axios.get(
                 "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
                 this.radiobases +
@@ -273,7 +274,7 @@ export default {
                     .format("YYYY-MM-DD");
                 this.aDateRange.push(diasAtras);
             }
-
+            axios.defaults.headers.post['Access-Control-Allow-Origin'] = '*';
             const response = await axios.get(
                 "https://testnodeapp01.herokuapp.com/reporteRadiobases"
             );
