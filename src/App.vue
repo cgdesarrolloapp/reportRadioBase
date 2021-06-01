@@ -53,8 +53,8 @@
                 border: '1px solid black',
                 backgroundColor: ColorBG,
               },
-            ]" v-for="i in Object.values(aDateReport.fechatrafico)" :key="i">
-                    {{ i }}
+            ]" v-for="i in Object.values(items)" :key="i">
+                    {{ i.TRAFICO }}
                 </td>
             </tr>
         </tbody>
