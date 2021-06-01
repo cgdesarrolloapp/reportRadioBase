@@ -152,7 +152,7 @@ export default {
             date: "",
             rb: [],
             radiobases: "",
-            region="",
+            region:"",
             aDateRange: [],
             aDateReport: {
                 fechatrafico: {}
