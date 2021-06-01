@@ -38,7 +38,7 @@
         </thead>
         <tbody :class="tblBody">
             <tr v-for="i in Object.values(items)" :key="i" >
-                <th v-bind:style="{ height: '50px', border: '1px solid black' }" scope="row">
+                <th v-bind:style="{ height: '50px', border: '1px solid black', verticalAlign:'middle' }" scope="row">
                     {{ i.RADIOBASE }}
                 </th>
                 <td  v-bind:style="[
@@ -73,7 +73,7 @@
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
     color: #2c3e50;
-    margin-top: 25px;
+    padding: 20px;
 }
 #app h1 {
     background-color: #00529b
