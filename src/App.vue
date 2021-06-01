@@ -1,79 +1,50 @@
 <template>
-  <div id="app">
-    <form
-      v-bind:style="{ padding: '10px' }"
-      v-on:submit.prevent="onSubmit"
-      id="appForm">
-      <br />
-      <label v-bind:style="{ padding: '10px', margin: '10px' }">
-        Ingrese Radiobase</label>
-      <br />
-      <input
-        v-bind:style="{ padding: '10px', margin: '10px' }"
-        id="inpRadioBase"
-        name="RADIOBASES"
-        placeholder="Radiobase"
-        value="RBZA9931C003"
-      />
-      <br />
-      <label v-bind:style="{ padding: '10px', margin: '10px' }"
-        >Seleccione Fecha</label>
-      <br />
-      <input
-        id="dpFecha"
-        v-bind:style="{ padding: '10px', margin: '10px' }"
-        type="date"
-        name="FECHA"
-        placeholder="Fecha"
-        value=""
-      />
-      <input type="submit" @click="consultarRadioBase"  />
-      <br />
-      <b-button variant="success" />
+<div id="app">
+    <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm">
+        <br />
+        <label v-bind:style="{ padding: '10px', margin: '10px' }">
+            Ingrese Radiobase</label>
+        <br />
+        <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
+        <br />
+        <label v-bind:style="{ padding: '10px', margin: '10px' }">Seleccione Fecha</label>
+        <br />
+        <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
+        <input type="submit" @click="consultarRadioBase" />
+        <br />
+        <b-button variant="success">hola
+        </b-button>
     </form>
 
-     <b-table striped hover :items="items"></b-table>
+    <b-table striped hover :items="items"></b-table>
 
     <table id="tblRadio" class="table mt-5">
-      <thead>
-        <tr id="rotate">
-          <th
-            :style="{
+        <thead>
+            <tr id="rotate">
+                <th :style="{
               width: '90px',
               minWidth: '90px',
               height: '140px',
               border: '1px solid black',
-            }"
-            style="max-width: 100px,  min-width: 100px"
-            scope="col"
-          >
-            Radiobases
-          </th>
-          <td
-            :style="{
+            }" style="max-width: 100px,  min-width: 100px" scope="col">
+                    Radiobases
+                </th>
+                <td :style="{
               transform: 'rotate(' + turn + 'deg)',
               width: '90px',
               height: '140px',
               border: '1px solid black',
-            }"
-            v-for="i in aDateRange"
-            :key="i"
-          >
-            {{ i }}
-          </td>
-        </tr>
-      </thead>
-      <tbody :class="tblBody">
-        <tr>
-          <th
-            v-bind:style="{ height: '150px', border: '1px solid black' }"
-            scope="row"
-          >
-            {{ radiobases }}
-          </th>
-          <td
-            v-bind:id="dynamicId++"
-            v-bind:style="[
+            }" v-for="i in aDateRange" :key="i">
+                    {{ i }}
+                </td>
+            </tr>
+        </thead>
+        <tbody :class="tblBody">
+            <tr>
+                <th v-bind:style="{ height: '150px', border: '1px solid black' }" scope="row">
+                    {{ radiobases }}
+                </th>
+                <td v-bind:id="dynamicId++" v-bind:style="[
               parseInt(i) <= 15
                 ? (ColorBG = 'red')
                 : parseInt(i) > 15 && parseInt(i) <= 40
@@ -88,256 +59,263 @@
                 border: '1px solid black',
                 backgroundColor: ColorBG,
               },
-            ]"
-            v-for="i in Object.values(aDateReport.fechatrafico)"
-            :key="i"
-          >
-            {{ i }}
-          </td>
-        </tr>
-      </tbody>
+            ]" v-for="i in Object.values(aDateReport.fechatrafico)" :key="i">
+                    {{ i }}
+                </td>
+            </tr>
+        </tbody>
     </table>
-  </div>
+</div>
 </template>
+
 <style>
 #app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+    margin-top: 60px;
 }
+
 #tblRadio {
-  border: 2px solid black;
+    border: 2px solid black;
 }
+
 #tblRadio td {
-  border: 2px solid black;
+    border: 2px solid black;
 }
+
 #tblRadio th {
-  border: 2px solid black;
+    border: 2px solid black;
 }
+
 #rotate td {
-  -moz-transform: rotate(-90deg); /* FF3.5+ */
-  -o-transform: rotate(-90deg); /* Opera 10.5 */
-  -webkit-transform: rotate(-90deg); /* Saf3.1+, Chrome */
+    -moz-transform: rotate(-90deg);
+    /* FF3.5+ */
+    -o-transform: rotate(-90deg);
+    /* Opera 10.5 */
+    -webkit-transform: rotate(-90deg);
+    /* Saf3.1+, Chrome */
 }
 
 table,
 th,
 td {
-  border: 1px solid black;
+    border: 1px solid black;
 }
+
 table {
-  border: 2px solid #42b983;
-  border-radius: 3px;
-  background-color: #fff;
+    border: 2px solid #42b983;
+    border-radius: 3px;
+    background-color: #fff;
 }
 
 th {
-  color: black;
-  background-color: #ffffff;
-  color: rgba(255, 255, 255, 0.66);
-  cursor: pointer;
-  -webkit-user-select: none;
-  -moz-user-select: none;
-  -ms-user-select: none;
-  user-select: none;
+    color: black;
+    background-color: #ffffff;
+    color: rgba(255, 255, 255, 0.66);
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
 }
 
 td {
-  color: black;
-  background-color: #f9f9f9;
+    color: black;
+    background-color: #f9f9f9;
 }
 
 th,
 td {
-  color: black;
-  min-width: 120px;
-  padding: 10px 20px;
+    color: black;
+    min-width: 120px;
+    padding: 10px 20px;
 }
 
 th.active {
-  color: #fff;
+    color: #fff;
 }
 
 th.active .arrow {
-  opacity: 1;
+    opacity: 1;
 }
 </style>
+
 <script>
 import axios from "axios";
 import moment from "moment";
 export default {
-  name: "App",
-  components: {},
-  data() {
-    return {
-      items: [],
-      date: "",
-      rb: [],
-      radiobases: "",
-      aDateRange: [],
-      aDateReport: { fechatrafico: {} },
-      turn: 90,
-      widthTd: 50,
-      ColorBG: "white",
-      IndexId: 0,
-      Radiobases: [],
-      radiobasesMaestro: [],
-    };
-  },
-  beforeMount() {
-    this.initTable();
-    //this.maestroRadioBases();
-  },
-  mounted() {},
-  updated() {
-    for (let step = 0; step < 29; step++) {
-      //document.getElementById("1").style.backgroundColor = "lightblue";
-    }
-  },
-  methods: {
-    colorBack(val) {
-      console.log("aaaaaaa", val);
-      return "red";
-    },
-    async maestroRadioBases() {
-      const response = await axios.get(
-        "https://testnodeapp01.herokuapp.com/maestroRadiobases"
-      );
-      console.log("response", response);
-      this.radiobasesMaestro = response.data.results;
-    },
-    async consultarRadioBase() {
-      // document.getElementById(".tblBody > td") ? document.getElementById(".tblBody > td").remove : document.getElementById(".tblBody > td")
-      let sDateP = document.getElementById("dpFecha").value;
-      let sRadioBaseInp = document.getElementById("inpRadioBase").value;
-      this.radiobasesMaestro = [];
-      this.radiobases = sRadioBaseInp;
-      this.date = sDateP;
-      this.aDateRange = [];
-      this.items = [];
-      console.log("this.date", this.date);
-      let fecha = moment.utc(this.date).endOf("day").format();
-      console.log("fecha", fecha);
-      this.aDateRange.push(moment(fecha).format("YYYY-MM-DD"));
-      /*for (let step = 0; step < 29; step++) {
-        let diasAtras;
-        diasAtras = moment(fecha)
-          .subtract(step + 1, "days")
-          .format("YYYY-MM-DD");
-        this.aDateRange.push(diasAtras);
-      }*/
-      this.aDateRange = this.aDateRange.sort().reverse();
-      console.log("this.aDateRange", this.aDateRange);
-     /* const response = await axios.get(
-        "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
-          this.radiobases +
-          "&FECHA=" +
-          this.date
-      );*/
-      const response = await axios.get(
-        "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
-          this.radiobases +
-          "&REGION=" +
-          this.region
-      );
-      console.log("response", response);
-      var oData;
-      this.items = response.data.results;
-
-      this.items.forEach((item) => {
-        oData = {
-          RADIOBASE: item.RADIOBASE,
-          REGION: item.REGION,
-          fechatrafico: {},
+    name: "App",
+    components: {},
+    data() {
+        return {
+            items: [],
+            date: "",
+            rb: [],
+            radiobases: "",
+            aDateRange: [],
+            aDateReport: {
+                fechatrafico: {}
+            },
+            turn: 90,
+            widthTd: 50,
+            ColorBG: "white",
+            IndexId: 0,
+            Radiobases: [],
+            radiobasesMaestro: [],
         };
-        this.aDateRange.forEach((date) => {
-          const result = this.items.filter((item1) => item1.FECHA == date);
-          console.log("000 zzzzz", result);
-          if (result.length > 0) {
-            oData.fechatrafico[date] = result[0].TRAFICO;
-          } else {
-            if (!oData.fechatrafico[date]) {
-              oData.fechatrafico[date] = "";
-            }
-          }
-        });
-        console.log("oData", oData);
-      });
-      if (this.items.length == 0) {
-        oData = {
-          RADIOBASE: "",
-          REGION: "",
-          fechatrafico: {},
-        };
-        this.aDateRange.forEach((date) => {
-          oData.fechatrafico[date] = "";
-        });
-      }
-
-      console.log("oData Final", oData.fechatrafico);
-      this.aDateReport = oData;
-      console.log("Values", Object.values(this.aDateReport.fechatrafico));
-
-      if (this.items.length == 0) {
+    },
+    beforeMount() {
         this.initTable();
-      }
+        //this.maestroRadioBases();
     },
-    async initTable() {
-      //let oData;
-      let fecha = moment.utc(moment()).endOf("day").format();
-      console.log("fecha" + fecha + " " + this.items.length.toString());
-      this.aDateRange.push(moment(fecha).format("YYYY-MM-DD"));
-      for (let step = 0; step < 29; step++) {
-        let diasAtras;
-        diasAtras = moment(fecha)
-          .subtract(step + 1, "days")
-          .format("YYYY-MM-DD");
-        this.aDateRange.push(diasAtras);
-      }
+    mounted() {},
+    updated() {
+        for (let step = 0; step < 29; step++) {
+            //document.getElementById("1").style.backgroundColor = "lightblue";
+        }
+    },
+    methods: {
+        colorBack(val) {
+            console.log("aaaaaaa", val);
+            return "red";
+        },
+        async maestroRadioBases() {
+            const response = await axios.get(
+                "https://testnodeapp01.herokuapp.com/maestroRadiobases"
+            );
+            console.log("response", response);
+            this.radiobasesMaestro = response.data.results;
+        },
+        async consultarRadioBase() {
+            // document.getElementById(".tblBody > td") ? document.getElementById(".tblBody > td").remove : document.getElementById(".tblBody > td")
+            let sDateP = document.getElementById("dpFecha").value;
+            let sRadioBaseInp = document.getElementById("inpRadioBase").value;
+            this.radiobasesMaestro = [];
+            this.radiobases = sRadioBaseInp;
+            this.date = sDateP;
+            this.aDateRange = [];
+            this.items = [];
+            console.log("this.date", this.date);
+            let fecha = moment.utc(this.date).endOf("day").format();
+            console.log("fecha", fecha);
+            this.aDateRange.push(moment(fecha).format("YYYY-MM-DD"));
+            /*for (let step = 0; step < 29; step++) {
+              let diasAtras;
+              diasAtras = moment(fecha)
+                .subtract(step + 1, "days")
+                .format("YYYY-MM-DD");
+              this.aDateRange.push(diasAtras);
+            }*/
+            this.aDateRange = this.aDateRange.sort().reverse();
+            console.log("this.aDateRange", this.aDateRange);
+            /* const response = await axios.get(
+               "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
+                 this.radiobases +
+                 "&FECHA=" +
+                 this.date
+             );*/
+            const response = await axios.get(
+                "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
+                this.radiobases +
+                "&REGION=" +
+                this.region
+            );
+            console.log("response", response);
+            var oData;
+            this.items = response.data.results;
 
-      const response = await axios.get(
-        "https://testnodeapp01.herokuapp.com/reporteRadiobases"
-      );
-      console.log("response", response);
-      this.items = response.data.results;
-     /* if (this.items.length == 0) {
-        oData = {
-          RADIOBASE: "",
-          REGION: "",
-          fechatrafico: {},
-        };
-        this.aDateRange.forEach((date) => {
-          oData.fechatrafico[date] = "";
-        });
-        this.aDateReport = oData;
-        console.log("oData yyyy", oData);
-      } else {
-        this.items.forEach((item) => {
-          oData = {
-            RADIOBASE: item.RADIOBASE,
-            REGION: item.REGION,
-            fechatrafico: {},
-          };
-          this.aDateRange.forEach((date) => {
-            const result = this.items.filter((item1) => item1.FECHA == date);
-            console.log("000 zzzzz", result);
-            if (result.length > 0) {
-              oData.fechatrafico[date] = result[0].TRAFICO;
-            } else {
-              if (!oData.fechatrafico[date]) {
-                oData.fechatrafico[date] = "";
-              }
+            this.items.forEach((item) => {
+                oData = {
+                    RADIOBASE: item.RADIOBASE,
+                    REGION: item.REGION,
+                    fechatrafico: {},
+                };
+                this.aDateRange.forEach((date) => {
+                    const result = this.items.filter((item1) => item1.FECHA == date);
+                    console.log("000 zzzzz", result);
+                    if (result.length > 0) {
+                        oData.fechatrafico[date] = result[0].TRAFICO;
+                    } else {
+                        if (!oData.fechatrafico[date]) {
+                            oData.fechatrafico[date] = "";
+                        }
+                    }
+                });
+                console.log("oData", oData);
+            });
+            if (this.items.length == 0) {
+                oData = {
+                    RADIOBASE: "",
+                    REGION: "",
+                    fechatrafico: {},
+                };
+                this.aDateRange.forEach((date) => {
+                    oData.fechatrafico[date] = "";
+                });
             }
-          });
-          console.log("oData", oData);
-        });
-      }*/
+
+            console.log("oData Final", oData.fechatrafico);
+            this.aDateReport = oData;
+            console.log("Values", Object.values(this.aDateReport.fechatrafico));
+
+            if (this.items.length == 0) {
+                this.initTable();
+            }
+        },
+        async initTable() {
+            //let oData;
+            let fecha = moment.utc(moment()).endOf("day").format();
+            console.log("fecha" + fecha + " " + this.items.length.toString());
+            this.aDateRange.push(moment(fecha).format("YYYY-MM-DD"));
+            for (let step = 0; step < 29; step++) {
+                let diasAtras;
+                diasAtras = moment(fecha)
+                    .subtract(step + 1, "days")
+                    .format("YYYY-MM-DD");
+                this.aDateRange.push(diasAtras);
+            }
+
+            const response = await axios.get(
+                "https://testnodeapp01.herokuapp.com/reporteRadiobases"
+            );
+            console.log("response", response);
+            this.items = response.data.results;
+            /* if (this.items.length == 0) {
+               oData = {
+                 RADIOBASE: "",
+                 REGION: "",
+                 fechatrafico: {},
+               };
+               this.aDateRange.forEach((date) => {
+                 oData.fechatrafico[date] = "";
+               });
+               this.aDateReport = oData;
+               console.log("oData yyyy", oData);
+             } else {
+               this.items.forEach((item) => {
+                 oData = {
+                   RADIOBASE: item.RADIOBASE,
+                   REGION: item.REGION,
+                   fechatrafico: {},
+                 };
+                 this.aDateRange.forEach((date) => {
+                   const result = this.items.filter((item1) => item1.FECHA == date);
+                   console.log("000 zzzzz", result);
+                   if (result.length > 0) {
+                     oData.fechatrafico[date] = result[0].TRAFICO;
+                   } else {
+                     if (!oData.fechatrafico[date]) {
+                       oData.fechatrafico[date] = "";
+                     }
+                   }
+                 });
+                 console.log("oData", oData);
+               });
+             }*/
+        },
     },
-  },
 };
 </script>
-
-
