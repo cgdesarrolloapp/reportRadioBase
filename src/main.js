@@ -1,5 +1,6 @@
 import { createApp } from 'vue'
 import App from './App.vue'
+import moment from 'moment'
 
 //import { BootstrapVue, IconsPlugin } from 'bootstrap-vue'
 
