@@ -59,13 +59,12 @@
           </th>
           <td
             :style="{
-              transform: 'rotate(' + turn + 'turn)',
+              transform: 'rotate(' + turn + 'deg)',
               width: '90px',
-              minWidth: '90px',
               height: '140px',
               border: '1px solid black',
             }"
-            v-for="i in Object.keys(aDateReport.fechatrafico)"
+            v-for="i in aDateRange"
             :key="i"
           >
             {{ i }}
