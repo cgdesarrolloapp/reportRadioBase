@@ -33,7 +33,7 @@
               border: '1px solid black',
               verticalAlign:'middle'
             }" v-for="i in aDateRange" :key="i">
-                    {{ moment(i).format('ll') }}
+                    {{ i }}
                 </td>
             </tr>
         </thead>
