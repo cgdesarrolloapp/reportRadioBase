@@ -22,7 +22,8 @@
               minWidth: '90px',
               height: '140px',
               border: '1px solid black',
-            }" style="max-width: 100px,  min-width: 100px" scope="col">
+              verticalAlign:'middle'
+            }" scope="col">
                     Radiobases
                 </th>
                 <td :style="{
