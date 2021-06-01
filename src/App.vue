@@ -27,8 +27,9 @@
         placeholder="Fecha"
         value=""
       />
+      <input type="submit" @click="consultarRadioBase"  />
       <br />
-      <input type="submit" @click="consultarRadioBase" />
+      <b-button variant="success" />
     </form>
 
      <b-table striped hover :items="items"></b-table>
