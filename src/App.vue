@@ -308,7 +308,7 @@ export default {
       }
 
       const response = await axios.get(
-        "http://localhost:5000/reporteRadiobases"
+        "https://testnodeapp01.herokuapp.com/reporteRadiobases"
       );
       console.log("response", response);
       this.items = response.data.results;
