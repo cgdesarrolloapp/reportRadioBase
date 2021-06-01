@@ -188,7 +188,7 @@ export default {
       radiobases: "",
       aDateRange: [],
       aDateReport: { fechatrafico: {} },
-      turn: 0.75,
+      turn: 90,
       widthTd: 50,
       ColorBG: "white",
       IndexId: 0,
