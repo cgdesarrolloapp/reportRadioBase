@@ -12,7 +12,8 @@
         <br />
         <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
         <br />
-        <input type="submit" @click="consultarRadioBase" />
+        <!-- <input type="submit" @click="consultarRadioBase" /> -->
+        <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
         <br />
 
     </form>
