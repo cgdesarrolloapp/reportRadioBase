@@ -1,16 +1,13 @@
 <template>
 <div id="app">
-    <h1 class="bg-primary text-white text-center p-2">Reporte</h1>
+    <h1 class="bg-primary text-white text-center p-1">Reporte</h1>
     <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm">
-        <br />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
             Ingrese Radiobase</label>
         <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">Seleccione Fecha</label>
         <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
         <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
-        <br />
-
     </form>
 
     <b-table striped hover :items="items"></b-table>
