@@ -240,11 +240,17 @@ export default {
       }*/
       this.aDateRange = this.aDateRange.sort().reverse();
       console.log("this.aDateRange", this.aDateRange);
-      const response = await axios.get(
+     /* const response = await axios.get(
         "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
           this.radiobases +
           "&FECHA=" +
           this.date
+      );*/
+      const response = await axios.get(
+        "https://testnodeapp01.herokuapp.com/reporteRadiobases?RADIOBASE=" +
+          this.radiobases +
+          "&REGION=" +
+          this.region
       );
       console.log("response", response);
       var oData;
