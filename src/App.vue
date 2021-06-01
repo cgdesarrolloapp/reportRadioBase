@@ -12,8 +12,7 @@
         <input id="dpFecha" v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />
         <input type="submit" @click="consultarRadioBase" />
         <br />
-        <b-button variant="success">hola
-        </b-button>
+
     </form>
 
     <b-table striped hover :items="items"></b-table>
