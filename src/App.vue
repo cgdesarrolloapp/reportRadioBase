@@ -152,6 +152,7 @@ export default {
             date: "",
             rb: [],
             radiobases: "",
+            region="",
             aDateRange: [],
             aDateReport: {
                 fechatrafico: {}
@@ -191,6 +192,7 @@ export default {
             //let sDateP = document.getElementById("dpFecha").value;
             
             let sRegionInp = document.getElementById("inpRegion").value;
+            this.region = sRegionInp
             let sRadioBaseInp = document.getElementById("inpRadioBase").value;
             this.radiobasesMaestro = [];
             this.radiobases = sRadioBaseInp;
