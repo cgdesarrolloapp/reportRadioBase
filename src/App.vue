@@ -3,10 +3,10 @@
     <h1 class=" text-white text-center p-1">Reporte</h1>
     <!-- <form v-bind:style="{ padding: '10px' }" v-on:submit.prevent="onSubmit" id="appForm"> -->
         <label v-bind:style="{ padding: '10px', margin: '10px' }">
-            Ingrese Radiobase</label>
-        <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003" />
+            Radiobase</label>
+        <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRadioBase" name="RADIOBASES" placeholder="Radiobase" value="RBZA9931C003"  maxlength="12" />
         <label v-bind:style="{ padding: '10px', margin: '10px' }">Region</label>
-        <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRegion" name="REGION" placeholder="Region" value="6" />
+        <input v-bind:style="{ padding: '10px', margin: '10px' }" id="inpRegion" name="REGION" placeholder="Region" value="6" maxlength="1" type="Number"/>
         <!-- <input id="dpFecha" class="btn btn-success"  v-bind:style="{ padding: '10px', margin: '10px' }" type="date" name="FECHA" placeholder="Fecha" value="" />  -->
         <!-- <input type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</input> -->
         <button type="button" class="btn btn-success" @click="consultarRadioBase">Consultar</button>
